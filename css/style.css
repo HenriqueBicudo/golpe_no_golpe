@@ -1,0 +1,78 @@
+body{
+  background-color: #1C1C1C;
+
+}
+
+header{
+  background-color: #006FFF;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  margin-bottom: 20px;  
+  height: 70px;
+}
+
+.logo{
+  max-width:70px;
+}
+.divLogo{
+  display: flex !important;
+  align-itens: meusaco;
+}
+
+p{
+  color: #FFF;
+}
+h2{
+  color: #fff;
+}
+a{
+  color: #000101;
+}
+
+.navHeader {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  margin-right:40px;
+}
+
+.ulHeader {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.liHeader {
+  margin: 15px 10px;
+  padding: 10px 20px;
+}
+
+.aHeader {
+  text-decoration: none;
+  display: block;
+  position: relative;
+  transition: transform 0.2s ease;
+}
+.aHeader::before {
+  content: '';
+  display: block;
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 100%;
+  height: 3px;
+  background-color: white;
+  transform: scaleX(0);
+  transform-origin: bottom left;
+  transition: transform 0.2s ease;
+}
+
+.aHeader:hover {
+  color: whitesmoke;
+  transform: translateY(-3px);
+}
+
+.aHeader:hover::before {
+  transform: scaleX(1);
+}
+
