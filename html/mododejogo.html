@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modo de Jogo</title>
+    <link rel="stylesheet" href="../css/modoDeJogo.css">
+    <link rel="stylesheet" href="components.css">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<header>
+    <nav id="navegacao">
+        <div id="logo">
+            imagem da logo
+        </div>
+
+        <div id="links_Navegacao">
+            <nav class="navHeader">
+                <ul class="ulHeader">                    
+                    <li class="liHeader"><a class="aHeader" href="tutorial1.html">Como jogar</a></li>
+                    <li class="liHeader"><a class="aHeader" href="aprendaMais.html">Aprenda mais</a></li>
+                    <li class="liHeader"><a class="aHeader" href="quemSomos.html">Quem Somos</a></li>
+                </ul>
+            </nav>
+        </div>
+
+    </nav>
+</header>
+
+
+<body>
+    <section id="espace_Game">
+        <div id="topo_contato">
+            <div id="img_Perfil">
+                <img src="img/7c342e3b6e9cfcef8e243e15a8634984.png" alt="">
+            </div>
+
+            <div id="numero_contato">
+                <p>+55 41 91111-1111</p>
+            </div>
+        </div>
+        <div id="chat_Game">
+            <div id="balao_pergunta">
+                <p id="text1">Olá! Aqui é o gerente do Banco Seguro. Temos notado atividades suspeitas em sua conta e
+                    gostaríamos
+                    de
+                    verificar algumas informações para garantir a segurança dela. Por favor, forneça o número do seu
+                    cartão
+                    para que possamos prosseguir.
+
+                </p>
+            </div>
+
+            <div id="opcao_resposta">
+                <div id="balao_resposta" onclick="mensagem1()">
+                    <p> 1 - Claro, aqui está o número do meu cartão: 1234 5678 9012 3456. Espero que possamos resolver
+                        isso
+                        rapidamente.</p>
+
+                </div>
+                <div id="balao_resposta" onclick="mensagem2()">
+                    <p> 2 - Desculpe, mas não me sinto confortável compartilhando meu número de cartão por mensagem.
+                        Posso
+                        ligar para a central do banco para verificar essa situação?</p>
+
+
+                </div>
+                <div id="balao_resposta" onclick="mensagem3()">
+                    <p>
+                        3 - Entendo a preocupação com a segurança da minha conta. Antes de fornecer qualquer informação,
+                        gostaria de confirmar sua identidade. Poderia me fornecer o número do protocolo dessa atividade
+                        suspeita?
+                    </p>
+
+                </div>
+            </div>
+
+            <div id="resposta_fim_de_jogo">
+                <p id="text1">
+                    Parabéns! Você conseguiu dar um golpe no golpe com astúcia e perspicácia. Sua atenção aos detalhes e
+                    cautela foram impressionantes. Continue assim, sempre questionando e verificando antes de tomar
+                    decisões importantes. Lembre-se, a melhor defesa contra golpes é o conhecimento e a prevenção. Fique
+                    seguro e esteja um passo à frente dos golpistas!
+                </p>
+            </div>
+
+            <div id="btn_final_div">
+                <button>
+                    <p id="text1">Tentar novamente</p>
+                </button>
+
+            </div>
+        </div>
+
+    </section>
+
+
+
+
+
+    <footer>
+        <div id="rodape">
+            <p>Golpe no Golpe®2023 </p>
+        </div>
+    </footer>
+
+
+    <script src="../JS/jogoBancario.js"></script>
+</body>
+
+</html>
