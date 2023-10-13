@@ -1,0 +1,64 @@
+#meio{
+    background-color: #1C1C1C;
+    color: #FFF;
+    font-family: Segoe UI;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    height: 48.5rem;
+    
+}
+#texto_principal{
+    text-align: center;
+    padding: 150px;
+    padding-top: 0px !important;
+    padding-bottom: 56px !important;
+}
+
+h1{
+    font-family: Segoe UI;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    padding: 1rem;
+}
+
+#parte_Baixo{
+    display: flex;  
+    justify-content: space-around;
+}
+
+#text_Canto_esq, #text_Canto_dir {
+    width: 300px;
+    padding: 1rem;
+}
+
+#miniChat img{
+    width: 60vw;
+}
+
+#text_Canto_esq{
+    margin-top: 80px;
+}
+
+#text_baixo{
+    margin-top: 150px;
+}
+
+#text_Canto_dir{
+    margin-top: 300px;
+}
+
+#btn_Proximo_tutorial{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#btn_Proximo_tutorial button{
+    font-size: 2rem;
+    padding: 1rem 2rem;
+    border-radius: 40px;
+}

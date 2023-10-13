@@ -1,19 +1,13 @@
-* {
-    margin: 0;
-    padding: 0;
-}
-
-#navegacao {
-    background-color: #006FFF;
-    height: 70px;
+.logo{
+    max-width: 100%;
 }
 
 #topo_contato {
     background-color: #093A00;
-    height: 100px;
+
     color: #fff;
     display: flex;
-    padding: 1rem;
+    padding: 0.5rem;
     align-items: center;
 }
 
@@ -22,7 +16,7 @@
     font-family: Segoe UI;
     font-size: 40px;
     font-style: normal;
-    font-weight: 700;
+    font-weight: 600;
     line-height: normal;
     margin-left: 60px;
 }
@@ -34,35 +28,30 @@
 
 #img_Perfil img{
     border-radius: 122px;
-    background: url(../components/gerente.png), lightgray 50% / cover no-repeat;
-    width: 100px;
-    height: 100px;
+    background: url(<path-to-image>), lightgray 50% / cover no-repeat;
+    width: 80px;
+    height: 80px;
 }
 
 #chat_Game {
-    background-image: url(../components/background-chat.jfif);
-    height: 50rem;
-    padding: 2.5% 5%;
+    background-image: url(../components/ca34dee9445e2f2c9e992d3e80b6eadc.jfif);
+    height: 42rem;
+    padding: 1rem 2rem;
     
-
 }
 
 #chat_Game p{
     font-weight: 700;
-    font-size: 25px;
+    font-size: 20px;
 }
 
-#rodape {
-    height: 70px;
-    background-color: #006FFF;
-}
+
 
 #balao_pergunta {
     background-color: #707070;
     border-radius: 50px;
-    width: 70%;
+    width: 60%;
     padding: 1rem 2rem;
-    margin-top: 1.5%;
     color: #fff;
     
 }
@@ -77,23 +66,22 @@
 #balao_resposta{
     background-color: #fff;
     border-radius: 50px;
-    width: 90%;
-    padding: 1rem 2rem;
+    width: 85%;
+    padding: 1rem 4rem;
     color: #000101;
     font-family: Segoe UI;
     font-style: normal;
     line-height: normal;
-   
     margin-bottom: 20px;
 }
 
 #opcao_resposta{
     background-color: #2C6700;
-    width: 70%;
+    width: 65%;
     flex-shrink: 0;
     padding: 2rem 2rem;
     border-radius: 50px;
-    margin-top: 10%;
+    margin-top: 1rem;
     margin-left: 30%;
     display: block;
 }
@@ -108,11 +96,10 @@
     margin-top: 15%;
     margin-left: 5rem;
     color: #fff;
-    display: none;
+    
 }
 
-#btn_final_div{
-    display: none;
+#btn_final_div{    
     justify-content: center;
     margin-top: 3rem;
     
@@ -121,8 +108,7 @@
 
 #btn_final_div button{
     background-color: #FFF;
-    padding: 1rem 2rem;
-    border: none;
+    padding: 1rem 2rem;    
     border-radius: 40px;
 }
 

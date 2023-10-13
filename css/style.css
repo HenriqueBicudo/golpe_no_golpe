@@ -1,50 +1,87 @@
-body{
+.logo-container{
+  float: left;  
+  display: flex;
+  align-items: center;
+  max-height: 75px !Important;
+  max-width: 75px !Important;
+}
+.logoImg {
+  max-width: 100%;
+  margin-left: 30px !Important;
+}
+
+
+*{
+  margin: 0;
+  padding: 0;
+}
+
+body {
   background-color: #1C1C1C;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
 
 }
 
-header{
+header {
   background-color: #006FFF;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-  margin-bottom: 20px;  
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);  
   height: 70px;
+  text-align: center;
+  padding: 10px 0;
 }
 
-.logo{
-  max-width:70px;
-}
-.divLogo{
-  display: flex !important;
-  align-itens: ;
+#rodape {
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  height: 70px;
+  background-color: #006FFF;
+
 }
 
-p{
-  color: #FFF;
-}
-h2{
-  color: #fff;
-}
-a{
+/* #navegacao {
+  display: flex;
+  align-items: center;
+  column-gap: 27rem;
+  background-color: #006FFF;
+  height: 90px;
+} */
+
+#rodape p {
   color: #000101;
 }
 
-.navHeader {
-  display: flex;
+h2 {
+  color: #fff;
+}
+
+a {
+  color: #000101;
+  padding: 1rem;
+  align-items: center;
+}
+
+.navHeader {  
   justify-content: center;
   text-align: center;
-  margin-right:40px;
+  margin-right: 40px;
+  display: inline-block;
 }
 
 .ulHeader {
-  display: flex;
   list-style: none;
   margin: 0;
   padding: 0;
+  
 }
 
 .liHeader {
   margin: 15px 10px;
   padding: 10px 20px;
+  display: inline-block;
+  margin: 0 10px;
 }
 
 .aHeader {
@@ -53,6 +90,7 @@ a{
   position: relative;
   transition: transform 0.2s ease;
 }
+
 .aHeader::before {
   content: '';
   display: block;
@@ -75,4 +113,3 @@ a{
 .aHeader:hover::before {
   transform: scaleX(1);
 }
-
