@@ -1,0 +1,48 @@
+h1 { 
+  color : #fff;
+  font-family : Segoe UI;
+  text-align : center;
+  margin-top : 20px;
+  margin-botton: 20px;
+}
+.conteudo-texto p{
+  color : #fff;
+  font-family : Segoe UI;
+  margin-bottom : 20px;
+  margin-left : 20px;
+}
+img{ 
+  border-radius : 61px;
+  max-width: 100%
+}
+.img{
+  display : flex;
+  flex: 1; 
+  padding: 20px;
+}
+
+.conteudo-texto{
+  flex: 2; 
+  padding: 20px; 
+  max-width : 800px;
+}
+.content {
+  display: flex; 
+  align-items: center; 
+}
+#btn_final_div{    
+  justify-content: center;
+  margin-top: 3rem;
+  text-align: center;
+  margin-bottom: 20px; 
+}
+
+#btn_final_div button{
+  background-color: #FFF;
+  padding: 1rem 2rem;    
+  border-radius: 40px;
+  min-width: 560px;
+  min-height: 110px;
+}
+
+
