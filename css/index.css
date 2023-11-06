@@ -45,4 +45,18 @@ img{
   min-height: 110px;
 }
 
+#text1{
+  font-size: 30px;
+}
 
+#text1 : hover{
+  font-color: #0093e7 !important;
+}
+
+.text1 : hover{
+  font-color: #0093e7 !important;
+}
+
+.text1{
+  font-size: 30px;
+}
