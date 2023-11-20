@@ -89,7 +89,6 @@
 
 #resposta_fim_de_jogo{
     background-color: #282828;
-    width: 94rem;
     flex-shrink: 0;
     padding: 2rem 2rem;
     border-radius: 50px;
@@ -114,3 +113,21 @@
 #text1{
     font-size: 50px;
 }
+
+#text1 {
+    opacity: 1; 
+    transition: opacity 0.5s ease-in-out;
+}
+
+.fade-out {
+    opacity: 0;
+}
+
+.fade-in {
+    opacity: 1;
+}
+
+#text1.show {
+    opacity: 1;
+}
+

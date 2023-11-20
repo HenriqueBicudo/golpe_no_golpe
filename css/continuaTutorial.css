@@ -6,7 +6,7 @@
     font-style: normal;
     font-weight: 400;
     line-height: normal;
-
+    height: 48.5rem;
     
 }
 #texto_principal{
@@ -27,7 +27,7 @@ h1{
 
 #parte_Baixo{
     display: flex;  
-    justify-content: space-around;
+   
 }
 
 #text_Canto_esq, #text_Canto_dir {
@@ -35,13 +35,14 @@ h1{
     padding: 1rem;
 }
 
-#miniChat img{
-    width: 60vw;
-    margin-top: 30px;
+
+#tutoImg{
+    min-width: 300px !important;
 }
 
 #text_Canto_esq{
     margin-top: 80px;
+    margin-left: 30px;
 }
 
 #text_baixo{
@@ -59,12 +60,20 @@ h1{
 }
 
 #btn_Proximo_tutorial button{
-    font-size: 1rem;
-    padding: 1rem 4rem;
+    font-size: 2rem;
+    padding: 1rem 2rem;
     border-radius: 40px;
 }
 
-#btn_Proximo_tutorial {
-    margin-top: 32.5px;
-    margin-bottom: 32.5px;
+#text_Abaixo_Chat{
+    text-align: center;
+}
+
+#btn_Inicar_Partida button{
+    font-size: 30px;
+    width: 18rem;
+    border-radius: 50px;
+    margin-top: 20px;
+    border:none;
+    padding: 10px; 
 }

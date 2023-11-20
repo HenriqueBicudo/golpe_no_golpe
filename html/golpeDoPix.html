@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Golpe no golpe</title>
+    <link rel="stylesheet" href="../css/modoDeJogo.css">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+
+<body>
+    <header>
+        <nav id="navegacao">
+            <div class="logo-container">
+                <img src="../components/Logo Golpe no Golpe.png" class="logoImg">
+            </div>
+
+            <div id="links_Navegacao">
+                <nav class="navHeader">
+                    <ul class="ulHeader">
+                        <li class="liHeader">
+                            <a class="aHeader" href="tutorial.html">Como jogar</a>
+                        </li>
+                        <li class="liHeader">
+                            <a class="aHeader" href="aprendaMais.html">Aprenda mais</a>
+                        </li>
+                        <li class="liHeader">
+                            <a class="aHeader" href="quemSomos.html">Quem Somos</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+
+        </nav>
+    </header>
+    <body id="espace_Game">
+        <div id="topo_contato">
+            <div id="img_Perfil">
+                <img src="../components/perfilGolpePix.png" alt="">
+            </div>
+
+            <div id="numero_contato">
+                <p>+55 41 91111-1111</p>
+            </div>
+        </div>
+        <div id="chat_Game">
+            <div id="balao_pergunta">
+                <p id="text1">Oiê, tudo bem?? Hein, me meti em uma enrascada e preciso de uma ajuda. Perdi meu chip e comprei outro por isso o numero está diferente. Infelizmente, estou sem acesso às minhas contas online e estou passando por uma situação urgente. Preciso de dinheiro imediatamente para resolver alguns problemas. Você poderia me fazer um pix nesse celular? Eu prometo que assim que resolver, vou te devolver o dinheiro. É uma emergência, e estou contando com sua ajuda! 🙏</p>
+            </div>
+            
+              <div id="container_respostas">  
+                <div id="opcao_resposta">
+                    
+                    <div id="balao_resposta" onclick="ganhou()">
+                        <p> 1 - Puxa, sinto muito pela sua situação, mas não consigo fazer a transferência sem ter certeza de quem você é. É uma pena, mas, por segurança, não posso ajudar. Mas se quiser me ligar pra mim ter certeza que é vc mesmo, eu te ajudo.</p>
+                    </div>
+                    <div id="balao_resposta" onclick="continue_game()">
+                      <p>
+                          2 - Que situação complicada! O que aconteceu? é mt grave?
+                      </p>
+                    </div>
+                    <div id="balao_resposta" onclick="perdeu()">
+                      <p> 3 - Claro, farei o pix imediatamente.
+                      </p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="msg_fim">
+                <div id="resposta_fim_de_jogo" style="display: none">
+                    <p id="text1">
+                        Parabéns! Você conseguiu dar um golpe no golpe com astúcia e perspicácia. Sua atenção aos detalhes e cautela foram impressionantes.
+                        Continue assim, sempre questionando e verificando antes de tomar decisões importantes. Lembre-se, a melhor
+                        defesa contra golpes é o conhecimento e a prevenção. Fique seguro e esteja um passo à frente dos golpistas!
+                    </p>
+                </div>
+
+                <div id="btn_final_div" style="display: none">
+                    <button id="tenteNovamente" class="text1">
+                        Tentar novamente
+                    </button>
+
+                </div>
+            </div>
+        </div>
+    </body>
+
+    <footer>
+        <div id="rodape">
+            <p>Golpe no Golpe®2023 </p>
+        </div>
+    </footer>
+
+    <script src="../js/script.js"></script>
+    <script src="../js/scriptPix.js"></script>
+</html>
