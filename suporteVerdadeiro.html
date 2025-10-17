@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Golpe no golpe</title>
+    <link rel="stylesheet" href="css/modoDeJogo.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+
+<body>
+    <header>
+        <nav id="navegacao">
+            <div class="logo-container">
+                <img src="components/Logo Golpe no Golpe.png" class="logoImg">
+            </div>
+
+            <div id="links_Navegacao">
+                <nav class="navHeader">
+                    <ul class="ulHeader">
+                        <li class="liHeader">
+                            <a class="aHeader" href="tutorial.html">Como jogar</a>
+                        </li>
+                        <li class="liHeader">
+                            <a class="aHeader" href="aprendaMais.html">Aprenda mais</a>
+                        </li>
+                        <li class="liHeader">
+                            <a class="aHeader" href="quemSomos.html">Quem Somos</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+
+        </nav>
+    </header>
+    <body id="espace_Game">
+        <div id="topo_contato">
+            <div id="img_Perfil">
+                <img src="components/logoTecnologia.png" alt="">
+            </div>
+
+            <div id="numero_contato">
+                <p>+55 41 91111-1111</p>
+            </div>
+        </div>
+        <div id="chat_Game">
+            <div id="balao_pergunta">
+                <p id="text1">Oi, aqui é o Carlos do departamento de suporte técnico da Technology. Parece que sua conta está nfrentando problemas de segurança. Precisamos verificar alguns detalhes para garantir sua proteção. Por favor, forneça seu nome completo e a senha temporária que você recebeu por SMS.
+                </p>
+            </div>
+            
+              <div id="container_respostas">  
+                <div id="opcao_resposta">
+                    <div id="balao_resposta" onclick="perdeu()">
+                        <p> 1 - Desculpe, mas não me sinto seguro compartilhando minha senha temporária por mensagem. Esta situação parece suspeita demais. Não vou fornecer nenhuma informação.
+                        </p>
+
+                    </div>
+                    <div id="balao_resposta" onclick="ganhou()">
+                        <p> 2 - Hmm, isso parece um tanto suspeito. Posso verificar isso diretamente no site da empresa ou entrar em contato com o suporte para confirmar?</p>
+
+
+                    </div>
+                    <div id="balao_resposta" onclick="continue_game()">
+                        <p>
+                            3 - Estou preocupado com a segurança, mas se é necessário, vou fornecer as informações. No entanto, antes de fazer isso, pode me dar mais detalhes sobre o problema de segurança?
+                        </p>
+
+                    </div>
+                </div>
+            </div>
+
+            <div id="msg_fim">
+                <div id="resposta_fim_de_jogo" style="display: none">
+                    <p id="text1">
+                        Parabéns! Você conseguiu dar um golpe no golpe com astúcia e perspicácia. Sua atenção aos detalhes e cautela foram impressionantes.
+                        Continue assim, sempre questionando e verificando antes de tomar decisões importantes. Lembre-se, a melhor
+                        defesa contra golpes é o conhecimento e a prevenção. Fique seguro e esteja um passo à frente dos golpistas!
+                    </p>
+                </div>
+
+                <div id="btn_final_div" style="display: none">
+                    <button id="tenteNovamente" class="text1">
+                        Tentar novamente
+                    </button>
+
+                </div>
+            </div>
+        </div>
+    </body>
+
+    <footer>
+        <div id="rodape">
+            <p>Golpe no Golpe®2025 </p>
+        </div>
+    </footer>
+
+    <script src="JS/jogoSuporte.js"></script> 
+</html>
