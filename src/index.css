@@ -1,0 +1,201 @@
+:root {
+  /* surfaces — manila folder on a desk, not another dark-mode SaaS demo */
+  --color-bg: #e7ddbe;
+  --color-bg-alt: #ddd0ab;
+  --color-surface: #f9f4e6;
+  --color-surface-hover: #f1e9d1;
+  --color-border: #cabb90;
+  --color-border-strong: #ab9868;
+
+  /* brand — rust ink-stamp red, not the amber-glow or trust-blue defaults */
+  --color-accent: #a4501f;
+  --color-accent-strong: #7d3b16;
+  --color-accent-soft: rgba(164, 80, 31, 0.12);
+  --color-on-accent: #faf5e8;
+  --color-safe: #3f6b3f;
+  --color-safe-soft: rgba(63, 107, 63, 0.12);
+  --color-danger: #a92c1f;
+  --color-danger-soft: rgba(169, 44, 31, 0.12);
+
+  /* ink */
+  --color-text: #241d13;
+  --color-text-muted: #5e5138;
+  --color-text-faint: #8a7a55;
+
+  /* type — the accessible baseline is 18px, not the usual 16px */
+  --font-display: "Fraunces", Georgia, serif;
+  --font-body: "IBM Plex Sans", system-ui, -apple-system, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", monospace;
+  --fs-sm: 1rem;
+  --fs-base: 1.125rem;
+  --fs-lg: 1.3rem;
+  --fs-xl: 1.6rem;
+  --fs-2xl: 2.1rem;
+  --fs-3xl: 2.75rem;
+
+  /* spacing */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 1rem;
+  --space-4: 1.5rem;
+  --space-5: 2.5rem;
+  --space-6: 4rem;
+
+  /* shape — mostly square, a dossier corner, not "rounded-lg everywhere" */
+  --radius-sm: 3px;
+  --radius-md: 6px;
+  --radius-pill: 999px;
+
+  /* shadows — flat, crisp, paper-on-desk offsets. No blurred color glow. */
+  --shadow-card: 0 1px 2px rgba(36, 29, 19, 0.08), 0 6px 14px rgba(36, 29, 19, 0.1);
+  --shadow-stamp: 0 3px 0 var(--color-accent-strong);
+}
+
+/* Text-size control (header "Aa" toggle) — scales the whole page, since
+   every size in this file is in rem. Default is already a notch above the
+   usual 16px baseline because the primary audience includes elderly users. */
+html {
+  font-size: 106.25%; /* ~17px */
+}
+
+html[data-text-size="large"] {
+  font-size: 125%; /* ~20px */
+}
+
+html[data-text-size="xlarge"] {
+  font-size: 143.75%; /* ~23px */
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  min-height: 100vh;
+  line-height: 1.6;
+}
+
+a {
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+mark {
+  background: none;
+  color: var(--color-accent);
+  font-weight: 700;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+  border-radius: var(--radius-sm);
+}
+
+.section {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: var(--space-5) var(--space-4);
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  border: none;
+  border-radius: var(--radius-sm);
+  padding: 0.95rem 1.8rem;
+  font-family: var(--font-body);
+  font-size: var(--fs-base);
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  min-height: 3rem;
+  transition: transform 0.12s ease, box-shadow 0.12s ease, background-color 0.12s ease,
+    border-color 0.12s ease;
+}
+
+.btn svg {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+.btn-primary {
+  background: var(--color-accent);
+  color: var(--color-on-accent);
+  box-shadow: var(--shadow-stamp);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 0 var(--color-accent-strong);
+}
+
+.btn-primary:active {
+  transform: translateY(1px);
+  box-shadow: 0 1px 0 var(--color-accent-strong);
+}
+
+.btn-ghost {
+  background: var(--color-surface);
+  color: var(--color-text);
+  border: 1px solid var(--color-border-strong);
+}
+
+.btn-ghost:hover {
+  background: var(--color-surface-hover);
+  border-color: var(--color-accent);
+}
+
+.card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-card);
+}
+
+.tag {
+  display: inline-flex;
+  align-items: center;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 0.25rem 0.6rem;
+  border: 1px solid currentColor;
+  border-radius: var(--radius-sm);
+}

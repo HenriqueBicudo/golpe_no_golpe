@@ -1,0 +1,14 @@
+.site-footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-4);
+  background: var(--color-bg-alt);
+  border-top: 1px solid var(--color-border);
+  margin-top: var(--space-6);
+}
+
+.site-footer p {
+  color: var(--color-text-muted);
+  font-size: var(--fs-sm);
+}
