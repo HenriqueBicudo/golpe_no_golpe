@@ -1,13 +1,15 @@
 import ellipse1 from "../assets/Ellipse 1.png";
 import ellipse3 from "../assets/Ellipse 3.png";
-import jaum from "../assets/Jaum.png";
+import joao from "../assets/joao.jpg";
+import brayan from "../assets/brayan.jpg";
 import logo from "../assets/Logo Golpe no Golpe.png";
 import "./About.css";
 
-const members = [
+const members: { name: string; ra?: string; photo: string }[] = [
   { name: "Enzo Salles", ra: "2023102306", photo: ellipse1 },
   { name: "Henrique Bicudo", ra: "2023103607", photo: ellipse3 },
-  { name: "João Gabriel", ra: "2023100605", photo: jaum },
+  { name: "João Gabriel", ra: "2023100605", photo: joao },
+  { name: "Brayan Pereira", photo: brayan },
 ];
 
 export default function About() {
@@ -19,10 +21,10 @@ export default function About() {
 
       <div className="about__members">
         {members.map((member) => (
-          <div className="card about__member" key={member.ra}>
+          <div className="card about__member" key={member.name}>
             <img src={member.photo} alt={member.name} />
             <p className="about__member-name">{member.name}</p>
-            <p className="about__member-ra">RA: {member.ra}</p>
+            {member.ra && <p className="about__member-ra">RA: {member.ra}</p>}
           </div>
         ))}
       </div>
