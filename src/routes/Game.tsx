@@ -45,8 +45,8 @@ export default function Game() {
 
       {status === "error" ? (
         <p className="chat-error">
-          Não consegui falar com o servidor do jogo. Verifique se o Ollama está
-          rodando e tente novamente.
+          Não consegui falar com o servidor do jogo — pode ser muita gente
+          jogando ao mesmo tempo. Espere um minutinho e tente novamente.
         </p>
       ) : (
         <ChatInput
