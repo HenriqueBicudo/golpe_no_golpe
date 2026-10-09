@@ -5,10 +5,10 @@ import brayan from "../assets/brayan.jpg";
 import logo from "../assets/Logo Golpe no Golpe.png";
 import "./About.css";
 
-const members: { name: string; ra?: string; photo: string }[] = [
-  { name: "Enzo Salles", ra: "2023102306", photo: ellipse1 },
-  { name: "Henrique Bicudo", ra: "2023103607", photo: ellipse3 },
-  { name: "João Gabriel", ra: "2023100605", photo: joao },
+const members = [
+  { name: "Enzo Salles", photo: ellipse1 },
+  { name: "Henrique Bicudo", photo: ellipse3 },
+  { name: "João Gabriel", photo: joao },
   { name: "Brayan Pereira", photo: brayan },
 ];
 
@@ -24,7 +24,6 @@ export default function About() {
           <div className="card about__member" key={member.name}>
             <img src={member.photo} alt={member.name} />
             <p className="about__member-name">{member.name}</p>
-            {member.ra && <p className="about__member-ra">RA: {member.ra}</p>}
           </div>
         ))}
       </div>

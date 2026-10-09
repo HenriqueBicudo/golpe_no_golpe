@@ -39,11 +39,6 @@
   font-weight: 700;
 }
 
-.about__member-ra {
-  color: var(--color-text-muted);
-  font-size: var(--fs-sm);
-}
-
 .about__text {
   max-width: 700px;
   margin: 0 auto var(--space-5);
