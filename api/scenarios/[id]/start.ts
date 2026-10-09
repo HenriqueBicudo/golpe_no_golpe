@@ -1,5 +1,5 @@
 import type { VercelRequest, VercelResponse } from "@vercel/node";
-import { getScenario } from "../../_lib/scenarios/index.ts";
+import { getScenario } from "../../_lib/scenarios/index.js";
 
 export default function handler(req: VercelRequest, res: VercelResponse) {
   const id = req.query.id;

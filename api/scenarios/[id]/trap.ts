@@ -1,5 +1,5 @@
 import type { VercelRequest, VercelResponse } from "@vercel/node";
-import { getScenario } from "../../_lib/scenarios/index.ts";
+import { getScenario } from "../../_lib/scenarios/index.js";
 
 // Falha instantânea e determinística (clicou no link armadilha) — não
 // precisa da LLM, então nem chama o provider.

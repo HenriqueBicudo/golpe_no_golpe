@@ -1,9 +1,9 @@
 import type { VercelRequest, VercelResponse } from "@vercel/node";
-import { getScenario } from "./_lib/scenarios/index.ts";
-import { getProvider } from "./_lib/providers/index.ts";
-import { buildEvaluationMessages, parseEvaluation, type EvaluationOutcome } from "./_lib/evaluation.ts";
-import { sanitizeOutput } from "./_lib/guardrails.ts";
-import type { ChatMessage } from "./_lib/providers/types.ts";
+import { getScenario } from "./_lib/scenarios/index.js";
+import { getProvider } from "./_lib/providers/index.js";
+import { buildEvaluationMessages, parseEvaluation, type EvaluationOutcome } from "./_lib/evaluation.js";
+import { sanitizeOutput } from "./_lib/guardrails.js";
+import type { ChatMessage } from "./_lib/providers/types.js";
 
 interface EvaluateRequestBody {
   scenarioId: string;

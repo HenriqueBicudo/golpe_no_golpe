@@ -1,9 +1,8 @@
 import { defineConfig, loadEnv, type Plugin } from 'vite'
 import react from '@vitejs/plugin-react'
-import vercel from 'vite-plugin-vercel/vite'
 
-// vite-plugin-vercel only bundles api/ for `vite build` -> Vercel's Output API.
-// It doesn't serve those functions during `vite dev`, so this dev-only plugin
+// On Vercel, api/ is deployed as Node functions by the platform itself.
+// `vite dev` doesn't serve those functions, so this dev-only plugin
 // runs the same handler files directly against Vite's dev server middleware.
 function apiDevServer(): Plugin {
   return {
@@ -98,6 +97,6 @@ export default defineConfig(({ mode }) => {
   Object.assign(process.env, loadEnv(mode, process.cwd(), ''))
 
   return {
-    plugins: [react(), vercel(), apiDevServer()],
+    plugins: [react(), apiDevServer()],
   }
 })

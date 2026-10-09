@@ -1,4 +1,4 @@
-import type { ScenarioConfig } from "./scenarios/types.ts";
+import type { ScenarioConfig } from "./scenarios/types.js";
 
 const PREAMBLE = `Você está interpretando um personagem dentro de um simulador educativo anti-golpe, feito por universitários como projeto de extensão. O objetivo é ensinar pessoas a reconhecer golpes digitais.
 

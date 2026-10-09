@@ -1,6 +1,6 @@
 import { z } from "zod";
-import type { ScenarioConfig } from "./scenarios/types.ts";
-import type { ChatMessage } from "./providers/types.ts";
+import type { ScenarioConfig } from "./scenarios/types.js";
+import type { ChatMessage } from "./providers/types.js";
 
 export type EvaluationOutcome = "won" | "lost" | "timeout";
 

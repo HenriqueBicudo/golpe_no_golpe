@@ -1,4 +1,4 @@
-import type { ScenarioConfig } from "./types.ts";
+import type { ScenarioConfig } from "./types.js";
 
 export const fakeNews: ScenarioConfig = {
   id: "fake-news",

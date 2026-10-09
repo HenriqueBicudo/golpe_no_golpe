@@ -1,6 +1,6 @@
-import type { LLMProvider } from "./types.ts";
-import { ollamaProvider } from "./ollama.ts";
-import { createOpenAICompatibleProvider, ProviderHttpError } from "./openaiCompatible.ts";
+import type { LLMProvider } from "./types.js";
+import { ollamaProvider } from "./ollama.js";
+import { createOpenAICompatibleProvider, ProviderHttpError } from "./openaiCompatible.js";
 
 function requireEnv(name: string): string {
   const value = process.env[name];

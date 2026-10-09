@@ -1,4 +1,4 @@
-import type { ChatMessage, GenerateOptions, LLMProvider } from "./types.ts";
+import type { ChatMessage, GenerateOptions, LLMProvider } from "./types.js";
 
 interface OpenAICompatibleConfig {
   name: string;

@@ -1,5 +1,5 @@
 import type { VercelRequest, VercelResponse } from "@vercel/node";
-import { listScenarios } from "./_lib/scenarios/index.ts";
+import { listScenarios } from "./_lib/scenarios/index.js";
 
 export default function handler(_req: VercelRequest, res: VercelResponse) {
   // "category" (scam vs. legitimate) is deliberately left out — showing it

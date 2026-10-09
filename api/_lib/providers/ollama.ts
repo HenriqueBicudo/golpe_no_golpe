@@ -1,4 +1,4 @@
-import type { ChatMessage, GenerateOptions, LLMProvider } from "./types.ts";
+import type { ChatMessage, GenerateOptions, LLMProvider } from "./types.js";
 
 const BASE_URL = process.env.OLLAMA_BASE_URL ?? "http://localhost:11434";
 const MODEL = process.env.OLLAMA_MODEL ?? "qwen2.5:7b-instruct";

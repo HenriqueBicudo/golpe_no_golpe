@@ -1,10 +1,10 @@
 import type { VercelRequest, VercelResponse } from "@vercel/node";
-import { getScenario } from "./_lib/scenarios/index.ts";
-import { buildSystemPrompt } from "./_lib/promptBuilder.ts";
-import { getProvider } from "./_lib/providers/index.ts";
-import { parseLLMTurn } from "./_lib/responseSchema.ts";
-import { isCrisisMessage, CRISIS_SUPPORT_MESSAGE, sanitizeOutput } from "./_lib/guardrails.ts";
-import type { ChatMessage } from "./_lib/providers/types.ts";
+import { getScenario } from "./_lib/scenarios/index.js";
+import { buildSystemPrompt } from "./_lib/promptBuilder.js";
+import { getProvider } from "./_lib/providers/index.js";
+import { parseLLMTurn } from "./_lib/responseSchema.js";
+import { isCrisisMessage, CRISIS_SUPPORT_MESSAGE, sanitizeOutput } from "./_lib/guardrails.js";
+import type { ChatMessage } from "./_lib/providers/types.js";
 
 interface ChatRequestBody {
   scenarioId: string;
