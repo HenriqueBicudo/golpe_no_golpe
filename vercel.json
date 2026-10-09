@@ -1,5 +1,8 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": "vite",
+  "buildCommand": "vite build",
+  "outputDirectory": "dist",
   "redirects": [{ "source": "/classic", "destination": "/classic/", "permanent": false }],
   "rewrites": [{ "source": "/((?!api/|classic/).*)", "destination": "/index.html" }]
 }
