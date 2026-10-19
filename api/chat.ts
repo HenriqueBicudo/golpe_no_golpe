@@ -12,7 +12,8 @@ interface ChatRequestBody {
   message: string;
 }
 
-const MAX_MESSAGE_LENGTH = 500;
+// Cabe um parágrafo longo digitado ou ~1 minuto de áudio transcrito.
+const MAX_MESSAGE_LENGTH = 1000;
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
   if (req.method !== "POST") {

@@ -35,7 +35,7 @@ export default function About() {
           maneira simples e divertida.
           <br />
           <br />
-          Assim nasceu o golpe no golpe® — uma plataforma fácil e gratuita
+          Assim nasceu o golpe no golpe®, uma plataforma fácil e gratuita
           para que todos aprendam e possam até ensinar outras pessoas.
         </p>
       </div>

@@ -80,7 +80,10 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     res.status(200).json({
       ...evaluation,
       positives: evaluation.positives.map(sanitizeOutput),
-      negatives: evaluation.negatives.map(sanitizeOutput),
+      negatives: evaluation.negatives.map((negative) => ({
+        ...negative,
+        text: sanitizeOutput(negative.text),
+      })),
       tip: sanitizeOutput(evaluation.tip),
     });
   } catch (error) {

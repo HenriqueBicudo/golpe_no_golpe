@@ -24,7 +24,9 @@
 }
 
 .chat-preview__window {
-  height: 230px;
+  height: auto;
+  min-height: 200px;
+  overflow: visible;
   padding: var(--space-3);
   gap: 0.5rem;
 }
@@ -35,21 +37,13 @@
   padding: 0.5rem 0.7rem;
 }
 
-.chat-preview__input {
-  padding: 0.6rem 0.8rem;
-}
-
-.chat-preview__field {
-  flex: 1;
-  border: 1px solid var(--color-border);
-  background: var(--color-bg);
-  color: var(--color-text-faint);
-  border-radius: var(--radius-pill);
-  padding: 0.55rem 0.9rem;
-  font-size: 0.82rem;
-}
-
-.chat-preview__send {
-  width: 34px;
-  height: 34px;
+.chat-preview__label {
+  display: block;
+  padding: 0.35rem 0.6rem;
+  border: none;
+  border-bottom: 1px dashed var(--color-border-strong);
+  border-radius: 0;
+  background: var(--color-accent-soft);
+  color: var(--color-accent);
+  text-align: center;
 }

@@ -19,7 +19,7 @@ export default function ScenarioSelect() {
       <div className="scenario-select__header">
         <h1 className="scenario-select__title">Escolha uma situação</h1>
         <p className="scenario-select__intro">
-          Cada conversa é diferente — e nem toda mensagem suspeita é golpe.
+          Cada conversa é diferente, e nem toda mensagem suspeita é golpe.
         </p>
       </div>
 

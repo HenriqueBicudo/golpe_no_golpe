@@ -40,7 +40,7 @@ export default function Tutorial() {
               <p>1º Vai aparecer uma tentativa de golpe no chat.</p>
               <br />
               <p>
-                Você deverá responder como faria numa conversa de verdade — e
+                Você deverá responder como faria numa conversa de verdade e
                 tentar descobrir se é ou não um golpe.
               </p>
             </div>
@@ -74,8 +74,8 @@ export default function Tutorial() {
             <div className="tutorial-card__note">
               <p>
                 Algumas respostas fazem o golpista continuar insistindo,
-                enquanto outras podem encerrar a conversa — pra melhor ou pra
-                pior. Você digita, a IA reage de verdade.
+                enquanto outras podem encerrar a conversa, pra melhor ou pra
+                pior. Você escreve ou grava um áudio, e a IA reage de verdade.
               </p>
             </div>
             <div className="tutorial-card__frame">

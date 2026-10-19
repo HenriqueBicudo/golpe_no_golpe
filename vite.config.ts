@@ -39,6 +39,8 @@ function apiDevServer(): Plugin {
           modulePath = '/api/chat.ts'
         } else if (segments.length === 1 && segments[0] === 'evaluate') {
           modulePath = '/api/evaluate.ts'
+        } else if (segments.length === 1 && segments[0] === 'transcribe') {
+          modulePath = '/api/transcribe.ts'
         } else if (segments.length === 1 && segments[0] === 'scenarios') {
           modulePath = '/api/scenarios.ts'
         } else if (segments.length === 3 && segments[0] === 'scenarios' && segments[2] === 'start') {

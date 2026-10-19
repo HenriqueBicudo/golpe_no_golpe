@@ -2,6 +2,9 @@ import { useEffect, useRef, useState } from "react";
 import { Play, Pause, AlertTriangle } from "lucide-react";
 
 interface VoiceMessageBubbleProps {
+  role: "npc" | "player";
+  // Áudio do jogador ainda sendo transcrito.
+  pending?: boolean;
   src: string;
   duration: string;
   transcript: string;
@@ -15,12 +18,22 @@ function formatTime(seconds: number): string {
   return `${mins}:${secs.toString().padStart(2, "0")}`;
 }
 
-export default function VoiceMessageBubble({ src, duration, transcript, time }: VoiceMessageBubbleProps) {
+export default function VoiceMessageBubble({
+  role,
+  pending,
+  src,
+  duration,
+  transcript,
+  time,
+}: VoiceMessageBubbleProps) {
+  const isPlayer = role === "player";
   const audioRef = useRef<HTMLAudioElement>(null);
   const [isPlaying, setIsPlaying] = useState(false);
   const [currentTime, setCurrentTime] = useState(0);
   const [totalTime, setTotalTime] = useState<number | null>(null);
-  const [showTranscript, setShowTranscript] = useState(false);
+  // No áudio do próprio jogador a transcrição já vem aberta: é o texto que a
+  // IA recebe, então ele precisa ver se foi entendido certo.
+  const [showTranscript, setShowTranscript] = useState(role === "player");
   const [errored, setErrored] = useState(false);
 
   useEffect(() => {
@@ -42,7 +55,7 @@ export default function VoiceMessageBubble({ src, duration, transcript, time }: 
   const progress = totalTime ? Math.min(currentTime / totalTime, 1) : 0;
 
   return (
-    <div className="voice-bubble">
+    <div className={isPlayer ? "voice-bubble voice-bubble--player" : "voice-bubble"}>
       <audio
         ref={audioRef}
         src={src}
@@ -80,14 +93,20 @@ export default function VoiceMessageBubble({ src, duration, transcript, time }: 
               ? "Áudio indisponível"
               : `${formatTime(currentTime)} / ${totalTime ? formatTime(totalTime) : duration}`}
           </span>
-          <button
-            className="voice-bubble__transcript-toggle"
-            onClick={() => setShowTranscript((v) => !v)}
-          >
-            {showTranscript ? "ocultar transcrição" : "ver transcrição"}
-          </button>
+          {!pending && (
+            <button
+              className="voice-bubble__transcript-toggle"
+              onClick={() => setShowTranscript((v) => !v)}
+            >
+              {showTranscript ? "ocultar transcrição" : "ver transcrição"}
+            </button>
+          )}
         </div>
-        {showTranscript && <p className="voice-bubble__transcript">{transcript}</p>}
+        {pending ? (
+          <p className="voice-bubble__transcript voice-bubble__transcript--pending">Transcrevendo áudio…</p>
+        ) : (
+          showTranscript && <p className="voice-bubble__transcript">{transcript}</p>
+        )}
       </div>
 
       <span className="bubble__time voice-bubble__time">{time}</span>

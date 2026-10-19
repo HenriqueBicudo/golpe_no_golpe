@@ -218,6 +218,46 @@
   align-self: flex-end;
 }
 
+/* nota de voz gravada pelo jogador: mesma cor dos balões dele */
+.voice-bubble--player {
+  align-items: flex-start;
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+  border-bottom-left-radius: var(--radius-md);
+  border-bottom-right-radius: 4px;
+  color: var(--color-on-accent);
+}
+
+.voice-bubble--player .voice-bubble__play {
+  background: var(--color-on-accent);
+  color: var(--color-accent);
+}
+
+.voice-bubble--player .voice-bubble__track {
+  background: rgba(250, 245, 232, 0.35);
+}
+
+.voice-bubble--player .voice-bubble__progress {
+  background: var(--color-on-accent);
+}
+
+.voice-bubble--player .voice-bubble__meta,
+.voice-bubble--player .voice-bubble__transcript-toggle,
+.voice-bubble--player .voice-bubble__transcript {
+  color: var(--color-on-accent);
+}
+
+.voice-bubble--player .voice-bubble__transcript {
+  font-size: var(--fs-base);
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.voice-bubble__transcript--pending {
+  font-style: italic;
+  opacity: 0.85;
+}
+
 /* typing indicator */
 .typing-bubble {
   display: inline-flex;
@@ -256,23 +296,40 @@
 }
 
 /* input */
-.chat-input {
-  display: flex;
-  align-items: center;
-  gap: var(--space-2);
-  padding: var(--space-3) var(--space-4);
+.chat-input-area {
   background: var(--color-surface);
   border-top: 1px solid var(--color-border);
 }
 
+.chat-input__notice {
+  margin: var(--space-2) var(--space-4) 0;
+  padding: 0.5rem 0.8rem;
+  border-radius: var(--radius-md);
+  background: var(--color-danger-soft);
+  color: var(--color-danger);
+  font-size: var(--fs-sm);
+}
+
+.chat-input {
+  display: flex;
+  align-items: flex-end;
+  gap: var(--space-2);
+  padding: var(--space-3) var(--space-4);
+}
+
 .chat-input__field {
   flex: 1;
+  min-width: 0;
   border: 1px solid var(--color-border);
   background: var(--color-bg);
   color: var(--color-text);
-  border-radius: var(--radius-pill);
-  padding: 0.7rem 1.1rem;
+  border-radius: 22px;
+  padding: 0.65rem 1.1rem;
+  font: inherit;
   font-size: var(--fs-base);
+  line-height: 1.4;
+  resize: none;
+  overflow-y: hidden;
   outline: none;
 }
 
@@ -302,6 +359,58 @@
 .chat-input__send:disabled {
   opacity: 0.4;
   cursor: not-allowed;
+}
+
+.chat-input__recording {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  min-height: 44px;
+}
+
+.chat-input__icon-btn {
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
+  border: none;
+  border-radius: 50%;
+  background: none;
+  color: var(--color-text-muted);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.chat-input__icon-btn:hover {
+  background: var(--color-danger-soft);
+  color: var(--color-danger);
+}
+
+.chat-input__rec-dot {
+  width: 10px;
+  height: 10px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: var(--color-danger);
+  animation: rec-pulse 1.2s ease-in-out infinite;
+}
+
+@keyframes rec-pulse {
+  50% {
+    opacity: 0.25;
+  }
+}
+
+.chat-input__rec-time {
+  flex: 1;
+  font-family: var(--font-mono);
+  font-size: var(--fs-sm);
+  color: var(--color-text);
+}
+
+.chat-input__rec-max {
+  color: var(--color-text-faint);
 }
 
 /* end of game overlay */
@@ -447,6 +556,46 @@
 
 .evaluation__bar-fill--lost {
   background: var(--color-danger);
+}
+
+.evaluation__criteria {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 var(--space-4);
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.evaluation__criterion {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.3rem 0.65rem;
+  border-radius: var(--radius-pill);
+  font-size: var(--fs-sm);
+}
+
+.evaluation__criterion--met {
+  background: var(--color-safe-soft);
+  color: var(--color-safe);
+}
+
+.evaluation__criterion--missed {
+  background: var(--color-bg-alt);
+  color: var(--color-text-faint);
+}
+
+.evaluation__penalty {
+  flex-shrink: 0;
+  margin-left: auto;
+  padding: 0 0.45rem;
+  border-radius: var(--radius-sm);
+  background: var(--color-danger-soft);
+  color: var(--color-danger);
+  font-family: var(--font-mono);
+  font-size: var(--fs-sm);
+  font-weight: 600;
 }
 
 .evaluation__section {

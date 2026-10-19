@@ -1,4 +1,4 @@
-import { ArrowLeft, Send } from "lucide-react";
+import { ArrowLeft } from "lucide-react";
 import gerenteAvatar from "../../assets/gerente.png";
 import "./chat.css";
 import "./ChatPreview.css";
@@ -15,8 +15,11 @@ interface ChatPreviewProps {
 
 export default function ChatPreview({ messages, typing }: ChatPreviewProps) {
   return (
-    <div className="chat-preview">
+    // Só ilustração: sem campo de digitação e com a etiqueta "Exemplo", pra
+    // ninguém tentar jogar aqui (isso acontecia quando a prévia ficava na home).
+    <div className="chat-preview" inert>
       <div className="chat-preview__frame">
+        <span className="tag chat-preview__label">Exemplo de conversa</span>
         <div className="chat-header chat-preview__header">
           <ArrowLeft size={18} className="chat-preview__back" />
           <img src={gerenteAvatar} alt="" className="chat-header__avatar" />
@@ -56,13 +59,6 @@ export default function ChatPreview({ messages, typing }: ChatPreviewProps) {
               </div>
             </div>
           )}
-        </div>
-
-        <div className="chat-input chat-preview__input">
-          <span className="chat-preview__field">Digite sua resposta...</span>
-          <span className="chat-input__send chat-preview__send">
-            <Send size={16} />
-          </span>
         </div>
       </div>
     </div>

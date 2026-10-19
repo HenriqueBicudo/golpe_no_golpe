@@ -15,7 +15,9 @@ export default function Game() {
     contact,
     endSummary,
     evaluation,
+    notice,
     sendMessage,
+    sendAudio,
     clickTrapLink,
     retryEvaluation,
     restart,
@@ -45,13 +47,15 @@ export default function Game() {
 
       {status === "error" ? (
         <p className="chat-error">
-          Não consegui falar com o servidor do jogo — pode ser muita gente
+          Não consegui falar com o servidor do jogo. Pode ser muita gente
           jogando ao mesmo tempo. Espere um minutinho e tente novamente.
         </p>
       ) : (
         <ChatInput
           disabled={status !== "in_progress"}
+          notice={notice}
           onSend={sendMessage}
+          onSendAudio={sendAudio}
         />
       )}
 

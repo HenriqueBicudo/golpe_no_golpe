@@ -32,13 +32,20 @@ export const CRISIS_SUPPORT_MESSAGE =
   "Você não precisa passar por isso sozinho(a).";
 
 // Filtro leve de saída: remove links reais (a IA não deveria estar
-// direcionando o jogador pra fora do cenário fictício) e um denylist curto de
-// palavrões, sem bloquear a resposta inteira.
+// direcionando o jogador pra fora do cenário fictício), um denylist curto de
+// palavrões e travessões, sem bloquear a resposta inteira. O prompt já pede
+// pra não usar travessão, mas o modelo escorrega e um único já denuncia que
+// o texto é de IA.
 const URL_PATTERN = /\bhttps?:\/\/\S+/gi;
 const PROFANITY = [/porra/gi, /caralho/gi, /merda/gi, /puta que pariu/gi];
 
 export function sanitizeOutput(text: string): string {
-  let clean = text.replace(URL_PATTERN, "[link removido]");
+  let clean = text
+    .replace(URL_PATTERN, "[link removido]")
+    .replace(/\s*—\s*/g, ", ")
+    .replace(/\s+–\s+/g, ", ")
+    .replace(/^,\s*/, "")
+    .replace(/,\s*([.,!?;:])/g, "$1");
   for (const word of PROFANITY) {
     clean = clean.replace(word, "***");
   }

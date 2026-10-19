@@ -71,11 +71,22 @@ export interface EvaluationRequest {
   history: { role: "npc" | "player"; text: string }[];
 }
 
+export interface EvaluationCriterion {
+  label: string;
+  met: boolean;
+}
+
+export interface EvaluationNegative {
+  text: string;
+  penalty: number | null;
+}
+
 export interface Evaluation {
   score: number;
   rating: string;
+  criteria: EvaluationCriterion[];
   positives: string[];
-  negatives: string[];
+  negatives: EvaluationNegative[];
   tip: string;
   wasScam: boolean;
 }
@@ -88,4 +99,25 @@ export async function postEvaluation(payload: EvaluationRequest): Promise<Evalua
   });
   if (!response.ok) throw new Error("Failed to evaluate conversation");
   return response.json();
+}
+
+async function blobToBase64(blob: Blob): Promise<string> {
+  const dataUrl = await new Promise<string>((resolve, reject) => {
+    const reader = new FileReader();
+    reader.onload = () => resolve(reader.result as string);
+    reader.onerror = () => reject(reader.error);
+    reader.readAsDataURL(blob);
+  });
+  return dataUrl.slice(dataUrl.indexOf(",") + 1);
+}
+
+export async function postTranscription(audio: Blob): Promise<string> {
+  const response = await fetch("/api/transcribe", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ audio: await blobToBase64(audio), mimeType: audio.type }),
+  });
+  if (!response.ok) throw new Error("Failed to transcribe audio");
+  const data = (await response.json()) as { text: string };
+  return data.text;
 }

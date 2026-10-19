@@ -3,7 +3,8 @@ import { listScenarios } from "./_lib/scenarios/index.js";
 
 export default function handler(_req: VercelRequest, res: VercelResponse) {
   // "category" (scam vs. legitimate) is deliberately left out — showing it
-  // upfront would spoil the point of scenarios like "suporte-verdadeiro".
+  // upfront would spoil the game. Titles, teasers and ids stay neutral too,
+  // since they show up on the cards and in the URL.
   const catalog = listScenarios().map((scenario) => ({
     id: scenario.id,
     title: scenario.title,

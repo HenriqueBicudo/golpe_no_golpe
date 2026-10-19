@@ -44,7 +44,7 @@ export default function LearnMore() {
         </h1>
         <p className="learn-more__intro">
           Viver em um mundo cada vez mais conectado traz vantagens, mas
-          também desafios — como o aumento dos golpes online. Aqui estão
+          também desafios, como o aumento dos golpes online. Aqui estão
           algumas dicas essenciais para se proteger.
         </p>
       </div>

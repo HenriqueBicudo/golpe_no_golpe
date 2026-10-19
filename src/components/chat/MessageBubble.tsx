@@ -6,9 +6,12 @@ export interface ChatMessage {
   text: string;
   time: string;
   // Presentes só quando essa mensagem representa uma nota de voz (ex: cenário
-  // de deepfake). Quando ausentes, a mensagem é renderizada como texto normal.
+  // de deepfake, ou um áudio gravado pelo jogador). Quando ausentes, a
+  // mensagem é renderizada como texto normal.
   audioSrc?: string;
   audioDuration?: string;
+  // Áudio do jogador ainda sendo transcrito (o texto ainda está vazio).
+  pending?: boolean;
   // Presente só quando essa mensagem contém o link-armadilha do cenário (ex:
   // perfil-falso). O trecho de texto igual a trapLink vira um botão clicável
   // — clicar é falha instantânea. Nunca é um link real/navegável.
@@ -54,6 +57,7 @@ export default function MessageBubble({
   time,
   audioSrc,
   audioDuration,
+  pending,
   trapLink,
   onTrapLinkClick,
   trapDisabled,
@@ -62,6 +66,8 @@ export default function MessageBubble({
     <div className={role === "npc" ? "bubble-row bubble-row--npc" : "bubble-row bubble-row--player"}>
       {audioSrc ? (
         <VoiceMessageBubble
+          role={role}
+          pending={pending}
           src={audioSrc}
           duration={audioDuration ?? "0:00"}
           transcript={text}

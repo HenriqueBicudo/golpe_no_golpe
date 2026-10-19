@@ -8,6 +8,7 @@ import {
   LayoutGrid,
   CircleCheck,
   CircleAlert,
+  CircleX,
   Lightbulb,
   LoaderCircle,
 } from "lucide-react";
@@ -65,6 +66,18 @@ function EvaluationReport({ data }: { data: Evaluation }) {
         />
       </div>
 
+      <ul className="evaluation__criteria" aria-label="Critérios da pontuação">
+        {data.criteria.map((criterion) => (
+          <li
+            key={criterion.label}
+            className={`evaluation__criterion evaluation__criterion--${criterion.met ? "met" : "missed"}`}
+          >
+            {criterion.met ? <CircleCheck size={16} /> : <CircleX size={16} />}
+            <span>{criterion.label}</span>
+          </li>
+        ))}
+      </ul>
+
       <div className="evaluation__section">
         <h3 className="evaluation__heading">O que você fez bem</h3>
         {data.positives.length > 0 ? (
@@ -86,14 +99,19 @@ function EvaluationReport({ data }: { data: Evaluation }) {
         {data.negatives.length > 0 ? (
           <ul className="evaluation__list">
             {data.negatives.map((item) => (
-              <li key={item} className="evaluation__item">
+              <li key={item.text} className="evaluation__item">
                 <CircleAlert size={18} className="evaluation__item-icon evaluation__item-icon--lost" />
-                <span>{item}</span>
+                <span>{item.text}</span>
+                {item.penalty !== null && (
+                  <span className="evaluation__penalty" aria-label={`menos ${item.penalty} pontos`}>
+                    −{item.penalty}
+                  </span>
+                )}
               </li>
             ))}
           </ul>
         ) : (
-          <p className="evaluation__empty">Nenhum deslize. Continue assim!</p>
+          <p className="evaluation__empty">Nenhum deslize: você não perdeu nenhum ponto.</p>
         )}
       </div>
 
